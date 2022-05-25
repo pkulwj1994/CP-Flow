@@ -325,7 +325,7 @@ if nblocks == 1 and flow_type == 'cpflow':
     savefig(f'{ToyData.__name__}_{nblocks}_{depth}_{k}_z.png')
 
     plt.figure(figsize=(5, 5))
-    data = data.data.numpy()
+    data = data.data.cpu().numpy()
     fx = data[:, 0].reshape(n, n)
     fy = data[:, 1].reshape(n, n)
     for i in range(n):
