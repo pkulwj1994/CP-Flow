@@ -307,7 +307,7 @@ if nblocks == 1 and flow_type == 'cpflow':
     # plotting potential's gradient field
     plt.figure(figsize=(5, 5))
     plt.quiver(f[:, 0].reshape(n, n)[::2, ::2], f[:, 1].reshape(n, n)[::2, ::2],
-               torch.exp(logp_).data.numpy().reshape(n, n)[::2, ::2])
+               torch.exp(logp_).data.cpu().numpy().reshape(n, n)[::2, ::2])
     plt.axis('off')
     plt.tight_layout()
     savefig(f'{ToyData.__name__}_{nblocks}_{depth}_{k}_grad.png')
